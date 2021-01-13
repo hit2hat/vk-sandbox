@@ -58,7 +58,9 @@ async function run(url) {
         console.log(`Opening app under user ${colors.cyan(userInfo.id)}...`);
 
         const startupLink = `${url}/?${generateMiniToken(userInfo.id)}`;
-        mainWindow.loadURL(startupLink);
+        mainWindow.loadURL(startupLink, {
+            userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1'
+        });
         mainWindow.show();
 
         mainWindow.webContents.on('new-window', (event, url, frameName, disposition, options, additionalFeatures) => {
