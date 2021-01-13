@@ -40,7 +40,7 @@ VK_SANDBOX_APP_ACCESS_TOKEN=<сервисный токен вашего прил
 5. ✏️ Добавьте скрипт в ```package.json```:
 ```
     "scripts": {
-        ...your scripts...
+        ...ваши другие скрипты...
         "sandbox": "vk-sandbox"
     },
 ```
