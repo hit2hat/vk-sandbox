@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="#"><img src="docs/logo.svg?raw=true" width="300" alt="VK Sandbox"></a>
-  <p>VK Sandbox</p>
+  <p>New way to test your apps 🔥</p>
 </h1>
 
 ## How to use?
