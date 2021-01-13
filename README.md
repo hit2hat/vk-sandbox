@@ -1,8 +1,7 @@
 <h1 align="center">
   <a href="#"><img src="https://vk.com/images/apps/mini_apps/vk_mini_apps_logo.svg" width="300" alt="VK Sandbox"></a>
+  <p>VK Sandbox</p>
 </h1>
-
-# VK Sandbox
 
 ## How to use?
 1. Install deps: ```npm i @vkdev/vk-sandbox --save-dev``` or ```yarn add -D @vkdev/vk-sandbox```
