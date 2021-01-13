@@ -1,4 +1,8 @@
-# VK Sandbox (for mini apps)
+<h1 align="center">
+  <a href="#"><img src="https://vk.com/images/apps/mini_apps/vk_mini_apps_logo.svg" width="300" alt="VK Sandbox"></a>
+</h1>
+
+# VK Sandbox
 
 ## How to use?
 1. Install deps: ```npm i @vkdev/vk-sandbox --save-dev``` or ```yarn add -D @vkdev/vk-sandbox```
@@ -6,7 +10,7 @@
 ```
 {
     "static_path": "build",
-    "app_id": 7588156,
+    "app_id": <YOUR APP ID>,
     ////////////////// ADD IT //////////////////
     "sandbox": {
         "url": "http://localhost:10888",
@@ -30,8 +34,8 @@
 ```
 3. Create or open ```.env``` and update it like under
 ```
-VK_SANDBOX_APP_SECRET_KEY=your app secret key
-VK_SANDBOX_APP_ACCESS_TOKEN=your app access token
+VK_SANDBOX_APP_SECRET_KEY=<your app secret key>
+VK_SANDBOX_APP_ACCESS_TOKEN=<your app access token>
 ```
 4. **!!! ADD ```.env``` INTO ```.gitignore``` !!!**
 5. Add to scripts in ```package.json```:
