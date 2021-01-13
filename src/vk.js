@@ -29,7 +29,7 @@ async function auth() {
 
         let handled = false;
         do {
-            const prompt_question = await promptly.confirm(chalk.yellow('Please open this url in browser', url));
+            const prompt_question = await promptly.confirm(chalk.yellow('Please open this url in browser', url, '(Y/n)'));
 
             if (!prompt_question) {
                 return Promise.reject("bad response " + prompt_question);
