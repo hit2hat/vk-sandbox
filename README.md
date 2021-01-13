@@ -55,5 +55,29 @@ VK_SANDBOX_APP_ACCESS_TOKEN=<сервисный токен вашего прил
 | **launch_params** (required; map of string) | Параметры запуска, пишутся без префикса ```vk_``` | см. пример выше |
 | **disable_touch** (optional; boolean) | Отключение эмуляции серсерного экрана | ```false``` |
 
+### Поддерживаемые события
+* VKWebAppInit
+* VKWebAppUpdateConfig
+* VKWebAppGetClientVersion
+* VKWebAppOpenCodeReader
+* VKWebAppClose
+* VKWebAppEnableSwipeBack
+* VKWebAppDisableSwipeBack
+* VKWebAppCopyText
+* VKWebAppAllowNotifications
+* VKWebAppDenyNotifications
+* VKWebAppAddToFavorites
+* VKWebAppAddToHomeScreen
+* VKWebAppSendToClient
+* VKWebAppGetUserInfo
+* VKWebAppCallAPIMethod
+* VKWebAppGetAuthToken
+* VKWebAppStorageGet
+* VKWebAppStorageSet
+* VKWebAppStorageGetKeys
+* VKWebAppShowStoryBox
+* VKWebAppGetAds
+* VKWebAppShowNativeAds
+
 ### Создатели
 * Степан Новожилов (@hit2hat)
