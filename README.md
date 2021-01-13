@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="#"><img src="https://vk.com/images/apps/mini_apps/vk_mini_apps_logo.svg" width="300" alt="VK Sandbox"></a>
+  <a href="#"><img src="docs/vk-sandbox.svg?raw=true" width="300" alt="VK Sandbox"></a>
   <p>VK Sandbox</p>
 </h1>
 
