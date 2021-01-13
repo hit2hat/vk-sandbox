@@ -1,0 +1,21 @@
+{
+  "name": "@vkdev/vk-sandbox",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "author": "hit2hat",
+  "license": "MIT",
+  "scripts": {
+    "start": "VK_SANDBOX_DEV=1 electron ."
+  },
+  "bin": "./bin/vk-sandbox",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "colors": "^1.4.0",
+    "configstore": "^5.0.1",
+    "dotenv": "^8.2.0",
+    "electron": "^11.1.1",
+    "node-fetch": "^2.6.1",
+    "prompts": "^2.4.0",
+    "require-module": "^0.1.0"
+  }
+}

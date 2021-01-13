@@ -1,0 +1,80 @@
+<html lang="ru">
+    <head>
+        <title>123</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+
+            body {
+                background: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            label, input, textarea {
+                width: 100%;
+            }
+
+            .modal {
+                background: white;
+                width: calc(100vw - 50px);
+                margin: 25px;
+            }
+
+            .buttons {
+                display: grid;
+                width: 100%;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 8px;
+                margin-top: 25px;
+                user-select: none;
+            }
+
+            .button {
+                padding: 8px 20px;
+                background: white;
+                color: black;
+                box-shadow: 0 0 25px rgba(0, 0, 0, .1);
+                border-radius: 5px;
+                text-align: center;
+                cursor: pointer;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="modal">
+            <label>
+                <p>Событие</p>
+                <input placeholder="VKWebAppUpdateConfig" style="margin-bottom: 8px" />
+            </label>
+            <br/>
+            <label>
+                <p>Параметры</p>
+                <textarea>{}</textarea>
+            </label>
+            <div class="buttons">
+                <div class="button" onclick="window.close()">
+                    Закрыть
+                </div>
+                <div class="button" onclick="sendEvent()">
+                    Отправить
+                </div>
+            </div>
+        </div>
+        <script type="application/javascript">
+            function sendEvent() {
+                const { ipcRenderer } = require('electron');
+                ipcRenderer.send('vk-bridge', {
+                    type: 'custom_event',
+                    data: 'space_gray',
+                });
+                window.close();
+            }
+        </script>
+    </body>
+</html>
