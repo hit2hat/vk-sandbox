@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const prompt = require('prompts');
+const promptly = require('promptly');
 const chalk = require('chalk');
 const config = require('./config');
 
@@ -29,15 +29,10 @@ async function auth() {
 
         let handled = false;
         do {
-            const prompt_question = await prompt({
-                type: 'confirm',
-                name: 'result',
-                initial: true,
-                message: chalk.yellow('Please open this url in browser', url)
-            });
+            const prompt_question = await promptly.confirm(chalk.yellow('Please open this url in browser', url));
 
-            if (!prompt_question.result) {
-                return Promise.reject("empty response " + prompt_question.result);
+            if (!prompt_question) {
+                return Promise.reject("bad response " + prompt_question);
             }
 
             const code_auth_token = await fetch(OAUTH_HOST + 'code_auth_token?device_id=' + device_id + '&client_id=' + SANDBOX_APP_ID);
