@@ -275,14 +275,7 @@ async function run(url) {
         });
     }
 
-    if (!config.has('access_token') || config.get('access_token') === null) {
-        const access_token = await vk.auth();
-        config.set('access_token', access_token);
-        createWindow();
-    } else {
-       app.on('ready', createWindow);
-    }
-
+    app.on('ready', createWindow);
     app.on('window-all-closed', app.quit);
 
     ipcMain.on('log', (event, arg) => {
