@@ -1,4 +1,10 @@
+const colors = require('colors/safe');
 const configFile = require('../config').file;
+
+if (configFile.secret_key === null || configFile.access_token === null) {
+    console.log(colors.red(`[ERROR]: .env file doesn't contain VK_SANDBOX_APP_SECRET_KEY or VK_SANDBOX_APP_ACCESS_TOKEN. abort`));
+    process.exit(1);
+}
 
 const generateMiniToken = (user_id, params = configFile.launch_params, secret_key = configFile.secret_key) => {
     const preparedConfigParams = Object.keys(params).reduce((a, x) => {
