@@ -4,7 +4,6 @@ const readline = require('readline');
 const colors = require('colors/safe');
 const packageJson = require('../package.json');
 
-const config = require('./config');
 const configFile = require('./config').file;
 const generateMiniToken = require('./utils/generateMiniToken');
 const vk = require('./vk');
