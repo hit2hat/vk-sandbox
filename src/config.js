@@ -16,5 +16,6 @@ module.exports.file = {
     access_token: dotenvConfig.VK_SANDBOX_APP_ACCESS_TOKEN || null,
     launch_params: deployConfig?.sandbox?.launch_params || {},
     url: deployConfig?.sandbox?.url || 'http://localhost:10888',
+    hash: deployConfig?.sandbox?.hash || '',
     disable_touch: deployConfig?.sandbox?.disable_touch || false,
 };

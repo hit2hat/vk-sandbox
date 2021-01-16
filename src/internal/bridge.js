@@ -10,7 +10,9 @@ let THEME = 'bright_light';
 let APPEARANCE = 'light';
 let INSETS = {
     top: 0,
-    bottom: 0,
+    bottom: 34,
+    left: 0,
+    right: 0,
 };
 
 const getAppConfig = () => {
@@ -18,6 +20,7 @@ const getAppConfig = () => {
         app_id: APP_ID,
         app: 'vkclient',
         appearance: APPEARANCE,
+        start_time: (new Date()).getTime(),
         scheme: THEME,
         insets: INSETS,
     };

@@ -57,7 +57,7 @@ async function run(url) {
         const userInfo = (await vk.call('users.get', {}))[0];
         console.log(`Opening app under user ${colors.cyan(userInfo.id)}...`);
 
-        const startupLink = `${url}/?${generateMiniToken(userInfo.id)}`;
+        const startupLink = `${url}/?${generateMiniToken(userInfo.id)}${configFile.hash !== null ? `#${configFile.hash}` : ''}`;
         mainWindow.loadURL(startupLink, {
             userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1'
         });
