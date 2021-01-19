@@ -44,8 +44,14 @@ const methodsFactory = (request_id) => ({
         Common
      */
     'VKWebAppInit': () => {
-        document.getElementById('vk-sandbox-splash').setAttribute('style', 'display: none');
-        return sendBridgeEvent(request_id, 'VKWebAppUpdateConfig', getAppConfig());
+        const intervalId = setInterval(() => {
+            const splash = document.getElementById('vk-sandbox-splash');
+            if (splash !== null) {
+                splash.setAttribute('style', 'display: none');
+                clearInterval(intervalId);
+                sendBridgeEvent(request_id, 'VKWebAppUpdateConfig', getAppConfig());
+            }
+        }, 50);
     },
     'VKWebAppGetClientVersion': () => {
         return sendBridgeEvent(request_id, 'VKWebAppGetClientVersionResult', {
