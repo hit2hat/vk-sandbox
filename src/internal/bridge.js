@@ -6,7 +6,6 @@ const configFile = require('../config').file;
 const vk = require('../vk');
 
 const APP_ID = Number(configFile.app_id);
-let THEME = 'bright_light';
 let APPEARANCE = 'light';
 let INSETS = {
     top: 0,
@@ -21,7 +20,7 @@ const getAppConfig = () => {
         app: 'vkclient',
         appearance: APPEARANCE,
         start_time: (new Date()).getTime(),
-        scheme: THEME,
+        scheme: localStorage.getItem('vk-sandbox:theme') || 'bright_light',
         insets: INSETS,
     };
 }
@@ -342,7 +341,7 @@ module.exports.light = (message) => {
     const { type, data } = message;
     switch (type) {
         case 'change_theme': {
-            THEME = data;
+            localStorage.setItem('vk-sandbox:theme', data)
             return sendBridgeEvent('internal', 'VKWebAppUpdateConfig', getAppConfig());
         }
 
