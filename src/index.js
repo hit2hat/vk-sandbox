@@ -4,6 +4,7 @@ const readline = require('readline');
 const colors = require('colors/safe');
 const packageJson = require('../package.json');
 
+const config = require('./config');
 const configFile = require('./config').file;
 const generateMiniToken = require('./utils/generateMiniToken');
 const vk = require('./vk');
@@ -160,7 +161,7 @@ async function run(url) {
                             {
                                 label: 'Светлая (bright_light)',
                                 type: 'radio',
-                                checked: true,
+                                checked: config.get('theme') === 'bright_light',
                                 click: () => {
                                     mainWindow.webContents.send('vk-bridge', {
                                         type: 'change_theme',
@@ -171,6 +172,7 @@ async function run(url) {
                             {
                                 label: 'Тёмная (space_gray)',
                                 type: 'radio',
+                                checked: config.get('theme') === 'space_gray',
                                 click: () => {
                                     mainWindow.webContents.send('vk-bridge', {
                                         type: 'change_theme',

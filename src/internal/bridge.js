@@ -20,7 +20,7 @@ const getAppConfig = () => {
         app: 'vkclient',
         appearance: APPEARANCE,
         start_time: (new Date()).getTime(),
-        scheme: localStorage.getItem('vk-sandbox:theme') || 'bright_light',
+        scheme: config.get('theme') || 'bright_light',
         insets: INSETS,
     };
 }
@@ -341,7 +341,7 @@ module.exports.light = (message) => {
     const { type, data } = message;
     switch (type) {
         case 'change_theme': {
-            localStorage.setItem('vk-sandbox:theme', data)
+            config.set('theme', data);
             return sendBridgeEvent('internal', 'VKWebAppUpdateConfig', getAppConfig());
         }
 

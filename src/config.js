@@ -3,6 +3,7 @@ const packageJson = require('../package.json');
 
 const config = new Config(packageJson.name, {
     access_token: null,
+    theme: 'bright_light',
 });
 
 const dotenv = require('dotenv');
